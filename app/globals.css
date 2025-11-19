@@ -16,6 +16,8 @@
   /* colors */
   --color-point: #6d6afe;
   --color-black: #111111;
+  --color-system: #1fecc6;
+  --color-error: #ff3235;
 
   --color-gray-100: #1e1e1e;
   --color-gray-200: #2c2c2c;
