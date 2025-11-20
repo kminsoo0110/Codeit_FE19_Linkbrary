@@ -1,28 +1,44 @@
 "use client";
 
-import clsx from "clsx";
-import { useState } from "react";
+// 로그인에 쓰이는 Input Component.
 
-function Input({ color = "black", type = "text", size }) {
-  const [exam, setExam] = useState();
+import clsx from "clsx";
+import Image from "next/image";
+import { useState } from "react";
+import EyeOn from "@/public/icons/eye-on.svg";
+import EyeOff from "@/public/icons/eye-off.svg";
+
+function Input({ type = "text", placeholder }) {
+  const [visible, setVisible] = useState(false);
+
+  function handleVisibleClick() {
+    setVisible((prev) => !prev);
+  }
+
+  // CheckList
+  // 1. 오류 관련 로직은 추가 예정
+  // 2. Button 클릭했을때 동작 수행하기
 
   return (
     <div
       className={clsx(
-        "flex gap-8 w-350 px-14 py-16 rounded-lg",
-        {
-          "bg-gray-200 text-white": color === "black",
-          "bg-gray-700 text-black": color === "white",
-        },
-        "focus-within:* focus-within:border focus-within:border-system"
+        "flex gap-8 w-350 px-15 py-18 rounded-lg bg-white border border-gray-300",
+        "focus-within:* focus-within:border focus-within:border-point"
       )}
     >
       <input
-        type={type}
-        className="flex-1 outline-none bg-transparent"
-        placeholder="내용 입력"
+        type={type === "password" ? (visible ? "text" : "password") : type}
+        className="flex-1 outline-none bg-transparent font-regular text-base"
+        placeholder={placeholder}
       />
-      <span className="cursor-pointer bg-gold-999">A</span>
+      {type === "password" && (
+        <span
+          className="flex justify-center cursor-pointer"
+          onClick={handleVisibleClick}
+        >
+          <Image src={visible ? EyeOff : EyeOn} alt="toggle visibility" />
+        </span>
+      )}
     </div>
   );
 }
