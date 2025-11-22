@@ -4,7 +4,7 @@ import Image from "next/image";
 import Chain from "@/public/icons/link.svg";
 
 // CheckList
-// 1. Button 클릭했을때 동작 수행하기
+// 1. Button 클릭했을때 함수를 Button 컴포넌트에 전달하기.
 
 function AddLink() {
   return (

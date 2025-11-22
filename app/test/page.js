@@ -1,5 +1,6 @@
 import AddLink from "@/components/addLink";
 import Button from "@/components/button";
+import Card from "@/components/card";
 import Input from "@/components/input";
 
 function Test() {
@@ -15,6 +16,7 @@ function Test() {
           <Input placeholder="내용을 입력하세요" />
           <Input type="password" placeholder="비밀번호를 입력하세요" />
           <AddLink />
+          <Card />
         </div>
       </div>
     </>
