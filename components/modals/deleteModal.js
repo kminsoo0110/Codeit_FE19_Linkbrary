@@ -4,6 +4,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import Close from "@/public/icons/_close.svg";
 import Button from "../button";
+import { useState } from "react";
 
 // CheckList
 // 1. 기본 기능 구현하기
@@ -12,11 +13,13 @@ import Button from "../button";
 // 4. 상태관리를 통해 버튼을 누르면 해당 상태와 handleClick함수를 전달하기
 // 5. 상황에 따른 모달 파일들을 하나의 파일로 옮기기
 
-function EditModal() {
+function DeleteModal() {
+  const [fileName, setFileName] = useState("폴더명");
+
   return (
     <div
       className={clsx(
-        "flex flex-col gap-24 w-360 h-238",
+        "flex flex-col gap-24 w-360 h-193",
         "bg-white px-40 py-32 rounded-2xl",
         "relative"
       )}
@@ -24,21 +27,13 @@ function EditModal() {
       <div className="absolute cursor-pointer w-24 h-24 top-15 right-15">
         <Image src={Close} alt="close" />
       </div>
-      <div className="font-bold text-xl text-center">폴더 이름 변경</div>
-      <div className="flex flex-col gap-15">
-        <input
-          className={clsx(
-            "w-280 px-15 py-18 rounded-lg",
-            "border border-gray-200",
-            "font-regular text-base",
-            "focus:border-point"
-          )}
-          placeholder="내용 입력"
-        />
-        <Button rounded="lg">변경하기</Button>
+      <div className="flex flex-col gap-8 text-center">
+        <div className="font-bold text-xl">폴더 삭제</div>
+        <div className="font-regular text-sm text-gray-200">{fileName}</div>
       </div>
+      <Button rounded="lg">삭제하기</Button>
     </div>
   );
 }
 
-export default EditModal;
+export default DeleteModal;

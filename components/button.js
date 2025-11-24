@@ -7,7 +7,7 @@ function Button({ children, rounded = "full" }) {
   return (
     <button
       className={clsx(
-        "flex justify-center font-semibold text- px-24 py-12 cursor-pointer",
+        "flex justify-center font-semibold text-base px-24 py-12 cursor-pointer",
         "text-white bg-linear-to-r from-point to-gradient",
         `rounded-${rounded}`
       )}

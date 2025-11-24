@@ -18,7 +18,7 @@ function AddLink() {
         <Image src={Chain} alt="Chain" className="justify-center" />
       </span>
       <input
-        className="flex-1 font-regular text-16 outline-none"
+        className="flex-1 font-regular text-base outline-none"
         type="text"
         placeholder="링크를 추가해 보세요"
       />
