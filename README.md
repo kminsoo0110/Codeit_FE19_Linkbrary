@@ -10,7 +10,7 @@ Deploy Site:
 
 [Linkbrary](https://codeit-fe19-linkbrary.vercel.app/)
 
-## Tech Stacks
+## Technology Stack
 
 To learn more about Next.js, take a look at the following resources:
 
