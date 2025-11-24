@@ -10,7 +10,7 @@ import ShareModal from "@/components/modals/shareModal";
 function Test() {
   return (
     <>
-      <h1 className="p-10 font-bold text-center bg-gold-999">
+      <h1 className="p-20 font-bold text-center text-3xl bg-gold-999">
         컴포넌트 실험 페이지
       </h1>
       <div className="flex flex-col justify-center py-20 bg-gray-100 min-h-screen px-auto">

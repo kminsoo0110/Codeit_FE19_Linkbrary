@@ -1,5 +1,42 @@
-function Nav() {
-  return <div>This is nav-bar</div>;
+import Link from "next/link";
+import Image from "next/image";
+import Button from "./button";
+import Logo from "@/public/icons/logo/logo2.svg";
+import Profile from "@/public/icons/profile.svg";
+
+// CheckList
+// 1. 로그인 비로그인 상태 구분하기.
+// 2. 데이터를 중복으로 받지 않기. (상위 페이지에서 받도록 or props나 zustand로 관리)
+
+function Nav({ isLogin = false }) {
+  return (
+    <div className="bg-gray-500">
+      <div className="flex items-center justify-between max-w-1520 mx-auto py-20">
+        <div className="cursor-pointer">
+          <Link href="/">
+            <Image src={Logo} alt="logo" />
+          </Link>
+        </div>
+        <div>
+          {isLogin ? (
+            <div className="flex items-center gap-24">
+              <button className="px-10 py-10 border border-point rounded-sm font-regular text-base">
+                즐겨찾기
+              </button>
+              <div className="flex items-center gap-6">
+                <div className="rounded-4xl bg-point p-12 cursor-pointer">
+                  <Image src={Profile} height={10} width={10} alt="profile" />
+                </div>
+                <div>Codeit@codeit.com</div>
+              </div>
+            </div>
+          ) : (
+            <Button rounded="lg">로그인</Button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Nav;
