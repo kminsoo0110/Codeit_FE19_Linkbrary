@@ -40,7 +40,7 @@ export default function Home() {
         <article className="pt-120 pb-50 ">
           <div className="flex items-center gap-157">
             <div className="flex flex-col gap-10">
-              <div className="font-bold text-5xl">
+              <div className="font-bold text-5xl leading-60">
                 <span className="bg-linear-to-r from-red-300 to-blue-300 bg-clip-text text-transparent">
                   원하는 링크
                 </span>
@@ -63,7 +63,7 @@ export default function Home() {
               <Image src={Landing3} alt="landing3" width={550} height={450} />
             </div>
             <div className="flex flex-col gap-10">
-              <div className="font-bold text-5xl">
+              <div className="font-bold text-5xl leading-60">
                 링크를 폴더로<br></br>
                 <span className="bg-linear-to-r from-yellow-200 to-blue-300 bg-clip-text text-transparent">
                   관리
@@ -80,7 +80,7 @@ export default function Home() {
         <article className="py-50">
           <div className="flex items-center gap-157">
             <div className="flex flex-col gap-10">
-              <div className="font-bold text-5xl">
+              <div className="font-bold text-5xl leading-60">
                 저장한 링크를<br></br>
                 <span className="bg-linear-to-r from-point to-blue-300 bg-clip-text text-transparent">
                   공유
@@ -104,7 +104,7 @@ export default function Home() {
               <Image src={Landing5} alt="landing5" width={550} height={450} />
             </div>
             <div className="flex flex-col gap-10">
-              <div className="font-bold text-5xl">
+              <div className="font-bold text-5xl leading-60">
                 저장한 링크를<br></br>
                 <span className="bg-linear-to-r from-blue-300 to-pink-400 bg-clip-text text-transparent">
                   검색
