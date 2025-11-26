@@ -8,7 +8,7 @@ import { useState } from "react";
 import EyeOn from "@/public/icons/eye-on.svg";
 import EyeOff from "@/public/icons/eye-off.svg";
 
-function Input({ type = "text", placeholder }) {
+function Input({ type = "text", placeholder, width = 350, ...props }) {
   const [visible, setVisible] = useState(false);
 
   function handleVisibleClick() {
@@ -22,14 +22,16 @@ function Input({ type = "text", placeholder }) {
   return (
     <div
       className={clsx(
-        "flex gap-8 w-350 px-15 py-18 rounded-lg bg-white border border-gray-300",
-        "focus-within:* focus-within:border focus-within:border-point"
+        "flex gap-8 px-15 py-18 rounded-lg bg-white border border-gray-300",
+        "focus-within:* focus-within:border focus-within:border-point",
+        `w-${width}`
       )}
     >
       <input
         type={type === "password" ? (visible ? "text" : "password") : type}
         className="flex-1 outline-none bg-transparent font-regular text-base"
         placeholder={placeholder}
+        {...props}
       />
       {type === "password" && (
         <span

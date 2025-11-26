@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Image from "next/image";
+import Link from "next/link";
 import Landing1 from "@/public/images/landing_1.png";
 import Landing2 from "@/public/images/landing_2.png";
 import Landing3 from "@/public/images/landing_3.png";
@@ -23,15 +24,16 @@ export default function Home() {
             를<br></br>쉽게 저장하고 관리해 보세요
           </div>
           <div className="text-center">
-            <button
+            <Link
+              href="/login"
               className={clsx(
                 "font-semibold text-base px-24 py-12 w-350 cursor-pointer",
                 "text-white bg-linear-to-r from-point to-gradient",
-                "rounded-lg cursor-pointer"
+                "rounded-lg cursor-pointer inline-block"
               )}
             >
               링크 추가하기
-            </button>
+            </Link>
           </div>
           <div className="flex justify-center pt-50">
             <Image src={Landing1} alt="landing1" />

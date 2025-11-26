@@ -31,7 +31,9 @@ function Nav({ isLogin = false }) {
               </div>
             </div>
           ) : (
-            <Button rounded="lg">로그인</Button>
+            <Button rounded="lg">
+              <Link href="/login">로그인</Link>
+            </Button>
           )}
         </div>
       </div>
