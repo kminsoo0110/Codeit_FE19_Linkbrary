@@ -17,7 +17,7 @@ export const useAuthStore = create((set) => ({
 
     set({ token: accessToken, isLogin: true });
 
-    localStorage.setItem("token", accessToken);
+    localStorage.setItem("token");
 
     return true;
   },
@@ -25,7 +25,7 @@ export const useAuthStore = create((set) => ({
   logout: () => {
     set({ token: null, isLogin: false });
     localStorage.removeItem("token", accessToken);
-    delete axios.defaults.headers.common["Authorization"];
+    delete instance.defaults.headers.common["Authorization"];
   },
 
   restore: () => {
