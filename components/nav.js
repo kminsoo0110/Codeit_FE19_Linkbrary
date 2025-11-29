@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import Button from "./button";
@@ -7,10 +9,10 @@ import { useAuthStore } from "@/store/authStore";
 
 // CheckList
 // 1. 데이터를 중복으로 받지 않기. (상위 페이지에서 받도록 or props나 zustand로 관리)
-// 2. 로그아웃 전용 UI 따로 만들기
+// 2. 로그인 버튼 바꾸기.
 
-function Nav({ isLogin = false }) {
-  const logout = useAuthStore((state) => state.logout);
+function Nav() {
+  const { user, isLogin, logout } = useAuthStore();
 
   return (
     <div className="bg-gray-500">
@@ -21,20 +23,20 @@ function Nav({ isLogin = false }) {
           </Link>
         </div>
         <div>
-          {isLogin ? (
+          {isLogin && user ? (
             <div className="flex items-center gap-24">
               <button className="px-10 py-10 border border-point rounded-sm font-regular text-base">
                 즐겨찾기
               </button>
               <div className="flex items-center gap-6">
-                <div
-                  className="rounded-4xl bg-point p-12 cursor-pointer"
-                  onClick={logout}
-                >
+                <div className="rounded-4xl bg-pink-300 p-12 cursor-pointer">
                   <Image src={Profile} height={10} width={10} alt="profile" />
                 </div>
-                <div>Codeit@codeit.com</div>
+                <div>{user?.name || "user"}</div>
               </div>
+              <Button rounded="lg" onClick={logout}>
+                로그아웃
+              </Button>
             </div>
           ) : (
             <Button rounded="lg">

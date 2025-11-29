@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,7 +30,7 @@ export default function Home() {
           </div>
           <div className="text-center">
             <Link
-              href={isLogin ? "/faq" : "/login"}
+              href={isLogin ? "/link" : "/login"}
               className={clsx(
                 "font-semibold text-base px-24 py-12 w-350 cursor-pointer",
                 "text-white bg-linear-to-r from-point to-gradient",

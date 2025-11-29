@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { useAuthStore } from "@/store/authStore";
 
 export default function MainLayout({ children }) {
-  const isLogin = useAuthStore((state) => state.isLogin);
   const restore = useAuthStore((state) => state.restore);
 
   useEffect(() => {
@@ -15,7 +14,7 @@ export default function MainLayout({ children }) {
 
   return (
     <>
-      <Nav isLogin={isLogin} />
+      <Nav />
       {children}
       <Footer />
     </>
