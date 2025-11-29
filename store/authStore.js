@@ -17,17 +17,19 @@ export const useAuthStore = create((set) => ({
 
     set({ token: accessToken, isLogin: true });
 
-    localStorage.setItem("token");
+    // key, value 한 쌍으로 토큰 저장.
+    localStorage.setItem("token", accessToken);
 
     return true;
   },
 
   logout: () => {
     set({ token: null, isLogin: false });
-    localStorage.removeItem("token", accessToken);
+    localStorage.removeItem("token");
     delete instance.defaults.headers.common["Authorization"];
   },
 
+  // 새로 고침해도 로그인 상태 유지.
   restore: () => {
     const restored = localStorage.getItem("token");
     if (!restored) return;

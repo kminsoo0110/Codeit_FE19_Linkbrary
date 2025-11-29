@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import { useAuthStore } from "@/store/authStore";
 import Landing1 from "@/public/images/landing_1.png";
 import Landing2 from "@/public/images/landing_2.png";
 import Landing3 from "@/public/images/landing_3.png";
@@ -8,6 +9,8 @@ import Landing4 from "@/public/images/landing_4.png";
 import Landing5 from "@/public/images/landing_5.png";
 
 export default function Home() {
+  const isLogin = useAuthStore((state) => state.isLogin);
+
   return (
     <div className="min-h-screen bg-white text-black">
       <div className="flex flex-col items-center">
@@ -25,7 +28,7 @@ export default function Home() {
           </div>
           <div className="text-center">
             <Link
-              href="/login"
+              href={isLogin ? "/faq" : "/login"}
               className={clsx(
                 "font-semibold text-base px-24 py-12 w-350 cursor-pointer",
                 "text-white bg-linear-to-r from-point to-gradient",

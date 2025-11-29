@@ -22,10 +22,6 @@ function Input({
     setVisible((prev) => !prev);
   }
 
-  // CheckList
-  // 1. 오류 관련 로직은 추가 예정
-  // 2. Button 클릭했을때 동작 수행하기
-
   return (
     <div
       className={clsx(

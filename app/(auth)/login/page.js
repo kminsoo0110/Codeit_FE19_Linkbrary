@@ -11,12 +11,17 @@ import Input from "@/components/input";
 
 function LoginPage() {
   const router = useRouter();
+  const login = useAuthStore((state) => state.login);
 
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
 
-  const handleLoginClick = (e) => {
+  const handleLoginClick = async (e) => {
     e.preventDefault();
+
+    const res = await login(email, pwd);
+    if (res) router.push("/");
+    else alert("아이디 또는 비밀번호를 입력하세요.");
   };
 
   return (
@@ -56,7 +61,9 @@ function LoginPage() {
             />
           </div>
         </div>
-        <Button rounded="lg">로그인</Button>
+        <Button rounded="lg" onClick={handleLoginClick}>
+          로그인
+        </Button>
       </div>
     </div>
   );
