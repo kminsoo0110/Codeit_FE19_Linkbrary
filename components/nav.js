@@ -25,8 +25,8 @@ function Nav() {
         <div>
           {isLogin && user ? (
             <div className="flex items-center gap-24">
-              <button className="px-10 py-10 border border-point rounded-sm font-regular text-base">
-                즐겨찾기
+              <button className="px-10 py-10 border border-point rounded-sm font-regular text-base cursor-pointer">
+                ⭐️ 즐겨찾기
               </button>
               <div className="flex items-center gap-6">
                 <div className="rounded-4xl bg-pink-300 p-12 cursor-pointer">

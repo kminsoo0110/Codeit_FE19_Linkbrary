@@ -3,10 +3,7 @@ import Button from "./button";
 import Image from "next/image";
 import Chain from "@/public/icons/link.svg";
 
-// CheckList
-// 1. Button 클릭했을때 함수를 Button 컴포넌트에 전달하기.
-
-function AddLink() {
+function AddLink({ value = "", onChange = () => {}, onClick, ...props }) {
   return (
     <div
       className={clsx(
@@ -20,9 +17,14 @@ function AddLink() {
       <input
         className="flex-1 font-regular text-base outline-none"
         type="text"
+        value={value}
+        onChange={onChange}
         placeholder="링크를 추가해 보세요"
+        {...props}
       />
-      <Button rounded="lg">추가하기</Button>
+      <Button rounded="lg" onClick={onClick}>
+        추가하기
+      </Button>
     </div>
   );
 }
